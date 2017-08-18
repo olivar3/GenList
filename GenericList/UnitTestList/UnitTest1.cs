@@ -132,5 +132,96 @@ namespace UnitTestList
             //Assert
             Assert.AreEqual(expectedResult, GenericList[0]);
         }
+        [TestMethod]
+        public void overloadplus() 
+        {
+            //Arrange
+            GenericList<int> lista = new GenericList<int>() { };
+            GenericList<int> listb = new GenericList<int>() { };
+            GenericList<int> listc = new GenericList<int>() { };
+            int expectedResult = listc;
+            lista.Add(1, 2, 3);
+            listb.Add(1, 2, 3);
+            listc.Add(lista, listb);
+            //Act
+            listc.Add(lista, listb);
+            //Assert
+            Assert.AreEqual(expectedResult, listc);
+        }
+        public void overloadplus2()
+        {
+            //Arrange
+            GenericList<string> lista = new GenericList<string>() { };
+            GenericList<string> listb = new GenericList<string>() { };
+            GenericList<string> listc = new GenericList<string>() { };
+            string expectedResult = listc;
+            lista.Add("A, B, C");
+            listb.Add("d, e, f");
+            listc.Add(lista, listb);
+            //Act
+            listc.Add(lista, listb);
+            //Assert
+            Assert.AreEqual(expectedResult, listc);
+        }
+        public void overloadplus3()
+        {
+            //Arrange
+            GenericList<double> lista = new GenericList<double>() { };
+            GenericList<double> listb = new GenericList<double>() { };
+            GenericList<double> listc = new GenericList<double>() { };
+            double expectedResult = listc;
+            lista.Add(1.1, 2.2, 3.3 );
+            listb.Add(4.4, 5.5, 6.6);
+            listc.Add(lista, listb);
+            //Act
+            listc.Add(lista, listb);
+            //Assert
+            Assert.AreEqual(expectedResult, listc);
+        }
+        public void overloadminus()
+        {
+            //Arrange
+            GenericList<int> lista = new GenericList<int>() { };
+            GenericList<int> listb = new GenericList<int>() { };
+            GenericList<int> listc = new GenericList<int>() { };
+            int expectedResult = listc;
+            lista.Add(1,2);
+            listb.Add(4,4);
+            listc.Remove(4);
+            //Act
+            listc.Remove(4);
+            //Assert
+            Assert.AreEqual(expectedResult, listc);
+        }
+        public void overloadminusdouble()
+        {
+            //Arrange
+            GenericList<double> lista = new GenericList<double>() { };
+            GenericList<double> listb = new GenericList<double>() { };
+            GenericList<double> listc = new GenericList<double>() { };
+            double expectedResult = listc;
+            lista.Add(1.2, 2.2);
+            listb.Add(2.3, 2.3);
+            listc.Remove(2.3);
+            //Act
+            listc.Remove(2.3);
+            //Assert
+            Assert.AreEqual(expectedResult, listc);
+        }
+        public void overloadminusstring()
+        {
+            //Arrange
+            GenericList<string> lista = new GenericList<string>() { };
+            GenericList<string> listb = new GenericList<string>() { };
+            GenericList<string> listc = new GenericList<string>() { };
+            string expectedResult = listc;
+            lista.Add("A, B, C");
+            listb.Add("D, E, F");
+            listc.Remove(lista);
+            //Act
+            listc.Remove(lista);
+            //Assert
+            Assert.AreEqual(expectedResult, listc);
+        }
     }
 }
