@@ -1,6 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GenericList;
+using System.Collections.Generic;
+
 namespace UnitTestList
 {
     [TestClass]
@@ -222,6 +224,21 @@ namespace UnitTestList
             listc.Remove(lista);
             //Assert
             Assert.AreEqual(expectedResult, listc);
+        }
+
+        public void zipper1()
+        {
+            //Arrange
+
+            GenericList<int> lista = new GenericList<int>() { };
+            GenericList<int> listb = new GenericList<int>() { };
+            GenericList<int> listc = new GenericList<int>() { };
+            lista.Add(1, 3, 5);
+            listb.Add(2, 4, 6);
+            listc.Zip(lista, listb);
+            //Act
+
+            //Assert
         }
     }
 }
