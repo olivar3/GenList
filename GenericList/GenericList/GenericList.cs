@@ -9,7 +9,10 @@ namespace GenericList
     public class GenericList<T>
     {
         T[] items = new T[0];
-        public void Add(T value)
+        private object value;
+
+
+        public void plusOverLoad(T value)
         {
             GenericList<int> listA = new GenericList<int>();
             GenericList<int> listB = new GenericList<int>();
@@ -19,7 +22,7 @@ namespace GenericList
             listC.Add(listA, listB);
             //logic to add value to list (internal array)
         }
-        public void Remove(T value)
+        public void minusOverload(T value)
         {
             GenericList<int> listA = new GenericList<int>();
             GenericList<int> listB = new GenericList<int>();
@@ -27,6 +30,22 @@ namespace GenericList
             listA.Add(1, 2, 3);
             listB.Add(4, 5, 6);
             listC.Remove(2, 4, 6);//logic to remove value to list (internal array)
+        }
+        public void add()
+        {
+            GenericList<int> listA = new GenericList<int>();
+            listA.Add(1, 2, 3);
+        }
+        public void remove()
+        {
+            GenericList<int> listA = new GenericList<int>();
+            listA.Add(1, 2, 3);
+            listA.Remove(2);
+        }
+
+        private void Remove(int v)
+        {
+            throw new NotImplementedException();
         }
 
         private void Remove(int v1, int v2, int v3)
@@ -40,12 +59,26 @@ namespace GenericList
         }
         public override string ToString()
         {
-            
-            return GenericList<T>;// see what return path this should have.
+            GenericList<int> Lista = new GenericList<int>();
+            Lista.Add(1, 2, 3, 4, 5);
+            return Lista.ToString();
         }
+
+        private void Add(int v1, int v2, int v3, int v4, int v5)
+        {
+            throw new NotImplementedException();
+        }
+
         public void zipTogether()
         {
-
+            GenericList<int> listA = new GenericList<int>();
+            GenericList<int> listB = new GenericList<int>();
+            GenericList<int> listC = new GenericList<int>();
+            GenericList<int> listD = new GenericList<int>();
+            GenericList<int> listE = new GenericList<int>();
+            int i = listA[0];
+            for (i = 0; i <= listA; i += 2);
+            int n = listB[];
         }
 
         public void ToString(string v)
@@ -122,10 +155,6 @@ namespace GenericList
             throw new NotImplementedException();
         }
 
-        public void Add(object a, object b, object c)
-        {
-            throw new NotImplementedException();
-        }
 
         public void Add(GenericList<double> lista, GenericList<double> listb)
         {
@@ -137,9 +166,5 @@ namespace GenericList
             throw new NotImplementedException();
         }
 
-        public object Zip(GenericList<int> list2, Func<object, object, object> p)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
